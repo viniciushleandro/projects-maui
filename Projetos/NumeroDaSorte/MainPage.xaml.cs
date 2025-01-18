@@ -1,25 +1,39 @@
-﻿namespace NumeroDaSorte
+namespace NumeroDaSorte;
+
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+    public MainPage()
     {
-        int count = 0;
-
-        public MainPage()
-        {
-            InitializeComponent();
-        }
-
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
+        InitializeComponent();
     }
 
+    private void OnGenerateLuckNumbers(object sender, EventArgs e)
+    {
+        lblNameApp.IsVisible = false;
+        vlLuckNumbers.IsVisible = true;
+
+        var set = GenerateLuckNumbers();
+
+        lblLuckNumber01.Text = set.ElementAt(0).ToString("D2");
+        lblLuckNumber02.Text = set.ElementAt(1).ToString("D2");
+        lblLuckNumber03.Text = set.ElementAt(2).ToString("D2");
+        lblLuckNumber04.Text = set.ElementAt(3).ToString("D2");
+        lblLuckNumber05.Text = set.ElementAt(4).ToString("D2");
+        lblLuckNumber06.Text = set.ElementAt(5).ToString("D2");
+    }
+
+    private SortedSet<int> GenerateLuckNumbers()
+    {
+        //SortedSet
+        var list = new SortedSet<int>();
+        while (list.Count < 6)
+        {
+            var random = new Random();
+            var number = random.Next(1, 60);
+
+            list.Add(number);
+        }
+
+        return list;
+    }
 }

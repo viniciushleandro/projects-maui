@@ -3,15 +3,17 @@
   <PropertyGroup>
     <IsFirstTimeProjectOpen>False</IsFirstTimeProjectOpen>
     <ActiveDebugFramework>net8.0-android</ActiveDebugFramework>
-    <ActiveDebugProfile>Xiaomi Redmi Note 9S (Android 12.0 – API 31)</ActiveDebugProfile>
-    <SelectedPlatformGroup>PhysicalDevice</SelectedPlatformGroup>
+    <ActiveDebugProfile>Pixel 7 - API 31 (Android 12.0 – API 31)</ActiveDebugProfile>
+    <SelectedPlatformGroup>Emulator</SelectedPlatformGroup>
     <DefaultDevice>pixel_7_-_api_31</DefaultDevice>
   </PropertyGroup>
   <ItemGroup>
-    <None Update="App.xaml">
+    <MauiXaml Update="MainPage.xaml">
       <SubType>Designer</SubType>
-    </None>
-    <None Update="AppShell.xaml">
+    </MauiXaml>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="App.xaml">
       <SubType>Designer</SubType>
     </None>
     <None Update="MainPage.xaml">
